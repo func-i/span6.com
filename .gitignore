@@ -1,0 +1,16 @@
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/**/*
+.DS_Store
+nbproject
+nbproject/*
+config/database.yml
+config/demo.yml
+public/javascripts/cache/*
+public/stylesheets/cache/*
+public/system
+public/p
+coverage
+doc
+

@@ -1,0 +1,211 @@
+<% content_for :js do %>
+  <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+      // Configure fancybox plugin
+      $("a.screenshot").fancybox({
+        'transitionIn'	:	'elastic',
+        'transitionOut'	:	'elastic',
+        'speedIn'		:	400,
+        'speedOut'		:	400,
+        'overlayShow'	:	false
+      });
+
+      // Configure scrollable plugin
+      $(".scrollable").scrollable({ });
+    });
+  </script>
+<% end %>
+<div class="header header_home page">
+
+  <div class="price_tag"></div>
+
+
+  <!-- Start App Screenshot -->
+  <img src="/images/screenshot.jpg" alt="" class="main_screenshot" />
+  <!-- End App Screenshot -->
+
+  <!-- Start App Info -->
+  <div class="info">
+    <h1>The Perfect CRM for YOUR Needs.</h1>
+    <p>
+      OSAMM ('Awesome') is a new cutting-edge CRM that  enables online advertisers to easily channel traffic from affiliate campaigns into multiple landing pages, convert the visitors into leads or customers, and track the performance of the overall flow.
+      But that's just the beginning!
+      <br/>
+      Sign up for a <span class="highlight_light">Free Demo and a 30-day Trial</span> to play around with it and decide if it Awesome-CRM is right for you.
+
+    </p>
+
+    <a href="signup.html" class="button icon"><img src="/images/go_icon.png" alt="" /><span>Signup Now!</span></a>
+    <span class="trial">30-day free trial. No credit card required.</span>
+  </div>
+  <!-- End App Info -->
+  <div class="clear"></div>
+
+</div>
+
+<div id="home" class="padding">
+
+  <div id="screenshots">
+
+    <div class="section_title">
+      <h3>Screenshots</h3>
+    </div>
+
+    <a href="javascript:;" class="controls prev">Previous</a>
+
+    <div class="scrollable">
+      <div class="items">
+        <!-- Start Screenshot Group 1 -->
+        <ul>
+          <li><a href="/images/screenshots/screen_1.jpg" class="screenshot" rel="group"><img src="/images/screenshots/screen_1_thumb.jpg" alt="" /></a></li>
+          <li><a href="/images/screenshots/screen_2.jpg" class="screenshot" rel="group"><img src="/images/screenshots/screen_2_thumb.jpg" alt="" /></a></li>
+          <li><a href="/images/screenshots/screen_3.jpg" class="screenshot" rel="group"><img src="/images/screenshots/screen_3_thumb.jpg" alt="" /></a></li>
+          <li><a href="/images/screenshots/screen_4.jpg" class="screenshot" rel="group"><img src="/images/screenshots/screen_4_thumb.jpg" alt="" /></a></li>
+          <li><a href="/images/screenshots/screen_5.jpg" class="screenshot" rel="group"><img src="/images/screenshots/screen_5_thumb.jpg" alt="" /></a></li>
+        </ul>
+        <!-- End Screenshot Group 1 -->
+        <!-- Start Screenshot Group 2 -->
+        <ul>
+          <li><a href="/images/screenshots/screen_1.jpg" class="screenshot" rel="group"><img src="/images/screenshots/screen_1_thumb.jpg" alt="" /></a></li>
+          <li><a href="/images/screenshots/screen_2.jpg" class="screenshot" rel="group"><img src="/images/screenshots/screen_2_thumb.jpg" alt="" /></a></li>
+          <li><a href="/images/screenshots/screen_3.jpg" class="screenshot" rel="group"><img src="/images/screenshots/screen_3_thumb.jpg" alt="" /></a></li>
+          <li><a href="/images/screenshots/screen_4.jpg" class="screenshot" rel="group"><img src="/images/screenshots/screen_4_thumb.jpg" alt="" /></a></li>
+          <li><a href="/images/screenshots/screen_5.jpg" class="screenshot" rel="group"><img src="/images/screenshots/screen_5_thumb.jpg" alt="" /></a></li>
+        </ul>
+        <!-- End Screenshot Group 2 -->
+      </div>
+    </div>
+
+    <a href="javascript:;" class="controls next">Next</a>
+
+    <div class="clear"></div>
+  </div>
+
+  <div id="features">
+
+    <div class="section_title">
+      <h3>Features &amp; Specs</h3>
+    </div>
+
+    <p>
+      <b>Customer Management</b>
+      <img src="/images/icons/track.gif" alt="" />
+      Create, manage and engage your customers through one platform.
+      A complete detailed history log tells you everything you need to know before you engage them.
+      A Call Centre team can easily use OSAMM to manage customer relations without security concerns.
+    </p>
+
+    <p>
+      <b>Simple Landing Page Integration</b>
+      <img src="/images/icons/schedule.gif" alt="" />
+      Integrate new and existing landing pages into OSAMM extremely quickly and without any developers.
+      Simply paste in the Javascript code snippet into your pages and they are ready to test and deploy!
+    </p>
+
+    <p class="last">
+      <b>Sell Subscriptions &amp; Trial Offers</b>
+      <img src="/images/icons/organize.gif" alt="" />
+      Finally, a recurring billing system that is fully customizable and yet simple and easy to manage.
+      Create a subscription with any interval and with an optional trial period.
+    </p>
+
+    <div class="clear spacer"></div>
+
+    <p>
+      <b>Fraud Protection</b>
+      <img src="/images/icons/time.gif" alt="" />
+      Automatically or Manually run our advanced Fraud Risk Analysis on your Leads or customers.
+      Place risky orders in a queue or assign them for further action.
+      Choose to reject sales that are above a certain risk threshold.
+    </p>
+
+    <p>
+      <b>Affiliate Portals</b>
+      <img src="/images/icons/dude.gif" alt="" />
+      Allow your affiliates to log into your OSAMM platform with a limited dashboard, reports and feature set.
+      Advanced security ensures that your Affiliates can only see their own statistics.
+    </p>
+
+    <p class="last">
+      <b>Fully Secure &amp; Compliant</b>
+      <img src="/images/icons/task.gif" alt="" />
+      A combination of 128-bit SSL Encryption and remote Level-1 PCI-compliant Credit Card storage facilities ensure
+      that you encur ZERO risk when dealing with sensitive customer information and get the best merchant rates.
+    </p>
+
+    <div class="clear spacer"></div>
+
+    <p>
+      <b>Lead Management</b>
+      <img src="/images/icons/time.gif" alt="" />
+      Collect leads of any kind through your landing pages and engage them using communication templates.
+      Leads can also be grouped and exported with ease.
+    </p>
+
+    <p>
+      <b>Customizable Email Notifications</b>
+      <img src="/images/icons/dude.gif" alt="" />
+      Create dynamic email templates for any customer or lead related events such as Welcome, Order shipment and Cancellation.
+      Split test your emails with the same ease as testing your landing pages.
+    </p>
+
+    <p class="last">
+      <b>Interactive Dashboard</b>
+      <img src="/images/icons/task.gif" alt="" />
+      A fully customizable and interactive dashboard presents you with the information you want, on demand.
+      From financial health to traffic reports to top performing campaigns, all the information is at your fingertips.
+    </p>
+
+    <div class="clear spacer"></div>
+
+
+    <p>
+      <b>Rich &amp; Real-time Reports</b>
+      <img src="/images/icons/time.gif" alt="" />
+      On-demand reporting for all aspects of your business from sales to fraud to user activity.
+      See what's relevant using powerful filters and conditions.
+    </p>
+
+    <p>
+      <b>Fully Mobile Friendly</b>
+      <img src="/images/icons/dude.gif" alt="" />
+      Not only can you view your dashboard and reports on the go,
+      but you can also manage all aspects of your store straight from your Smart-phone or iPad.
+    </p>
+
+    <p class="last">
+      <b>Online &amp; Offline E-commerce</b>
+      <img src="/images/icons/task.gif" alt="" />
+      Channel sales through online traffic and landing pages or place orders over the phone.
+      Give your CSRs as much power to up-sell, down-sell and negotiate with your clients for optimum retention.
+    </p>
+
+    <div class="clear spacer"></div>
+
+    <p>
+      <b>Role-based Restrictions</b>
+      <img src="/images/icons/time.gif" alt="" />
+      Create as many roles as you want or use the pre-defined roles to get up and running quickly.
+      Roles allow you to restrict access and privileges for your users.
+    </p>
+
+    <p>
+      <b>Dedicated Hassle-Free SaaS</b>
+      <img src="/images/icons/dude.gif" alt="" />
+      Unlike most CRM platforms, OSAMM can be hosted on a dedicated server and database so that the performance and issues of other sites does not affect yours.
+      It also gives us the power to customize it for your specific business needs without affecting other clients.
+    </p>
+
+    <p class="last">
+      <b>Customizable to YOUR Needs</b>
+      <img src="/images/icons/task.gif" alt="" />
+      Want features that are very specific to your business? 
+      No problem. We can customize OSAMM to fit your needs quickly and cheaply!
+
+    </p>
+
+
+    <div class="clear"></div>
+  </div>
+
+</div>
