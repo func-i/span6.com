@@ -5,8 +5,11 @@ AwesomeHome::Application.routes.draw do
   get 'about' => 'site#about'
   get 'tour' => 'site#tour'
   get 'pricing' => 'site#pricing'
-  get 'contact' => 'site#contact'
+  get 'contact' => 'inquiries#new'
+  get 'signup' => 'signups#new'
 
+  resources :signups, :only => [:new, :create]
+  resources :inquiries, :only => [:new, :create]
 
   root :to => "site#index"
 

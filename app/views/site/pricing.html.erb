@@ -8,9 +8,22 @@
   <div id="row_names">
     <ul>
       <li>Set-up Fee</li>
+      <li>Monthly Fee</li>
+      <li>Transaction Fee</li>
+      <li>Customization Hours</li>
+      <li>Customization Hours</li>
+      <li>Max SKUs</li>
+      <li>Max Users</li>
+      <li>Max Landing Pages</li>
       <li>Storage</li>
+      <li>Bandwidth</li>
+      <li>Recurring Billing</li>
+      <li>Fraud Detection</li>
+      <li>Affiliate Logins</li>
       <li>Custom Domains</li>
-      <li>Secure SSL</li>
+      <li>SSL Checkout</li>
+      <li>SSL Admin</li>
+      <li>Real-Time Stats</li>
     </ul>
   </div>
 
@@ -19,53 +32,132 @@
       <thead>
         <tr>
           <td>
-            <h2>Basic</h2>
-            <span>$20 Monthly</span>
+            <h2>30-Day Trial</h2>
+            <span>Limited Time Offer</span>
           </td>
           <td>
             <h2>Professional</h2>
-            <span>$30 Monthly</span>
+            <span>For Small Companies</span>
           </td>
           <td>
             <h2>Commercial</h2>
-            <span>$40 Monthly</span>
+            <span>For Mid-sized Companies</span>
           </td>
           <td class="last">
-            <h2>Premium</h2>
-            <span>$50 Monthly</span>
+            <h2>Enterprise</h2>
+            <span>For Large Organizations</span>
           </td>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>None</td>
-          <td>None</td>
-          <td>$20</td>
-          <td class="last">$20</td>
+          <td>Waived!</td>
+          <td>$1,600</td>
+          <td>$2,000</td>
+          <td class="last">$3,000</td>
         </tr>
         <tr class="color">
-          <td>5gb</td>
-          <td>10gb</td>
-          <td>25gb</td>
-          <td class="last">50gb</td>
+          <td>Waived</td>
+          <td>$1,200</td>
+          <td>$1,600</td>
+          <td class="last">$1,900</td>
         </tr>
         <tr>
-          <td><img src="images/x.png" alt="Included" /></td>
-          <td><img src="images/check.png" alt="Included" /></td>
-          <td><img src="images/check.png" alt="Included" /></td>
-          <td class="last"><img src="images/check.png" alt="Included" /></td>
+          <td>$0.40</td>
+          <td>$0.40</td>
+          <td>$0.35</td>
+          <td class="last">$0.30</td>
         </tr>
         <tr class="color">
-          <td><img src="images/x.png" alt="Included" /></td>
-          <td><img src="images/x.png" alt="Included" /></td>
-          <td><img src="images/check.png" alt="Included" /></td>
-          <td class="last"><img src="images/check.png" alt="Included" /></td>
+          <td>None</td>
+          <td>5</td>
+          <td>10</td>
+          <td class="last">15</td>
         </tr>
+        <tr>
+          <td>None</td>
+          <td>5</td>
+          <td>10</td>
+          <td class="last">15</td>
+        </tr>
+        <tr class="color">
+          <td>10</td>
+          <td>10</td>
+          <td>50</td>
+          <td class="last">Unlimited</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>3</td>
+          <td>10</td>
+          <td class="last">Unlimited</td>
+        </tr>
+        <tr class="color">
+          <td>10</td>
+          <td>10</td>
+          <td>50</td>
+          <td class="last">Unlimited</td>
+        </tr>
+        <tr>
+          <td>3 GB</td>
+          <td>3 GB</td>
+          <td>5 GB</td>
+          <td class="last">20 GB</td>
+        </tr>
+        <tr class="color">
+          <td>3 GB</td>
+          <td>3 GB</td>
+          <td>5 GB</td>
+          <td class="last">20 GB</td>
+        </tr>
+        <tr>
+          <td><%= check %></td>
+          <td><%= check %></td>
+          <td><%= check %></td>
+          <td class="last"><%= check %></td>
+        </tr>
+        <tr class="color">
+          <td><%= x %></td>
+          <td><%= x %></td>
+          <td><%= check %></td>
+          <td class="last"><%= check %></td>
+        </tr>
+        <tr>
+          <td><%= x %></td>
+          <td><%= x %></td>
+          <td><%= check %></td>
+          <td class="last"><%= check %></td>
+        </tr>
+        <tr class="color">
+          <td><%= x %></td>
+          <td><%= x %></td>
+          <td><%= check %></td>
+          <td class="last"><%= check %></td>
+        </tr>
+        <tr>
+          <td><%= check %></td>
+          <td><%= check %></td>
+          <td><%= check %></td>
+          <td class="last"><%= check %></td>
+        </tr>
+        <tr class="color">
+          <td><%= check %></td>
+          <td><%= check %></td>
+          <td><%= check %></td>
+          <td class="last"><%= check %></td>
+        </tr> 
+        <tr>
+          <td><%= check %></td>
+          <td><%= check %></td>
+          <td><%= check %></td>
+          <td class="last"><%= check %></td>
+        </tr>
+
         <tr class="buttons">
-          <td><a href="signup.html" class="button"><span>Select Plan</span></a></td>
-          <td><a href="signup.html" class="button"><span>Select Plan</span></a></td>
-          <td><a href="signup.html" class="button"><span>Select Plan</span></a></td>
-          <td><a href="signup.html" class="button"><span>Select Plan</span></a></td>
+          <td><%= link_to '<span>Select Plan</span>'.html_safe, new_signup_path, :class => "button" %></td>
+          <td><%= link_to '<span>Select Plan</span>'.html_safe, new_signup_path, :class => "button" %></td>
+          <td><%= link_to '<span>Select Plan</span>'.html_safe, new_signup_path, :class => "button" %></td>
+          <td><%= link_to '<span>Select Plan</span>'.html_safe, new_signup_path, :class => "button" %></td>
         </tr>
       </tbody>
     </table>

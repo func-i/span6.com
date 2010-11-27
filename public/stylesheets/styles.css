@@ -153,14 +153,14 @@ div#page .header .price_tag{
   height: 130px;
   position: absolute;
   top: -55px;
-  right: -35px;
+  right: -65px;
 }
 div#page .header_home img.main_screenshot{ 
   float: left;
-  padding: 20px 0px 0px 35px;
+  padding: 20px 0px 0px 15px;
 }
 div#page .header_home .info {
-  width: 450px;
+  width: 480px;
   float: right;
   margin: 25px 50px 0px 0px;
 }
@@ -355,7 +355,7 @@ Pricing
 div#row_names { float: left; margin: 83px 0px 0px 30px; }
 div#row_names ul {
   list-style: none;
-  line-height: 44px;
+  line-height: 46px;
 }
 div#row_names ul li {
   font-size: 14px;
@@ -388,6 +388,7 @@ div#price_table table thead td h2 {
 div#price_table tbody td {
   font-size: 14px;
   color: #555555;
+  line-height: 21px;
   padding: 12px 0px 12px 0px;
   border-right: 1px solid #d9d9d9;
   border-bottom: 1px solid #e6e6e6;
@@ -575,7 +576,6 @@ form input.text_field,
 form select { width: 248px; }
 form textarea { width: 870px; height: 200px; font-size: 13px; }
 form .send_form {
-  float: right;
   margin-top: 20px;
   margin-bottom: 10px;
 }
@@ -609,4 +609,8 @@ hr {
   width: 100%;
   height: 1px;
   margin: 20px 0px 20px 0px;
+}
+
+.disabled {
+  opacity: 0.5;
 }
