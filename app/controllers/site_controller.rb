@@ -2,10 +2,14 @@ class SiteController < ApplicationController
 
   caches_page :index, :about, :pricing, :contact, :signup_confirmed, :inquiry_confirmed
 
+
   def index
     @on_home = true
   end
 
+  def not_found
+  end
+  
   def about
     @on_about = true
   end

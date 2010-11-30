@@ -3,7 +3,7 @@ AwesomeHome::Application.routes.draw do
   # first created -> highest priority.
 
   get 'about' => 'site#about'
-#  get 'tour' => 'site#tour'
+  #  get 'tour' => 'site#tour'
   get 'pricing' => 'site#pricing'
   get 'contact' => 'inquiries#new'
   get 'signup' => 'signups#new'
@@ -15,6 +15,9 @@ AwesomeHome::Application.routes.draw do
   resources :inquiries, :only => [:new, :create]
 
   root :to => "site#index"
+
+  # If all else fails, render a 404.
+  get '*path' => 'site#not_found'
 
   # See how all your routes lay out with "rake routes"
   # This is a legacy wild controller route that's not recommended for RESTful applications.
