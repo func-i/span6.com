@@ -6,6 +6,7 @@ gem 'rails', '3.0.3'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+#gem "exception_notification", :git => "http://github.com/rails/exception_notification.git", :require => 'exception_notifier'
 
 # Use unicorn as the web server
 # gem 'unicorn'
