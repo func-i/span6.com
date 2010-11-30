@@ -1,7 +1,0 @@
-<% if @success %>
-  $('#formcontainer').slideUp('fast', function() { $('#thankyoucontainer').slideDown('fast'); });
-<% else %>
-  console.log('werd1');
-  $('#formcontainer').html('<%= escape_javascript(render('form')) %>').animate({opacity: 1}, 300);
-  console.log('werd2');
-<% end %>

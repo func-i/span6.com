@@ -7,14 +7,18 @@
 
 <div id="contact" class="padding">
 
-  <p>If you'd like to arrange for a Demo and walkthrough of <%= n %>, simply <a href="/signup">sign-up here</a></p>
+  <p class="confirmation">
+    Thank you for your interest. We will respond within one business day. Take care.
+  </p>
+
+
+  <p>If you'd like to arrange for a Demo and walk-through of <%= n %>, simply <a href="/signup">sign-up here</a></p>
   <p>Want to talk to us right away? Call us toll-free at: <strong><%= phone_number %></strong></p>
-  <p>For any other inquiries, questions or requests, please submit the form below:</p>
 
   <div class="section_title">
     <h3>Other Inquiry</h3>
   </div>
 
-  <%= render 'form' %>
+  <%= render 'inquiries/form' %>
 
 </div>

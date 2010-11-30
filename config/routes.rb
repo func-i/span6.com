@@ -8,6 +8,9 @@ AwesomeHome::Application.routes.draw do
   get 'contact' => 'inquiries#new'
   get 'signup' => 'signups#new'
 
+  get 'signup_confirmed' => 'site#signup_confirmed'
+  get 'inquiry_confirmed' => 'site#inquiry_confirmed'
+
   resources :signups, :only => [:new, :create]
   resources :inquiries, :only => [:new, :create]
 

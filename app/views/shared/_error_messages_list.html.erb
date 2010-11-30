@@ -1,31 +1,31 @@
 
-  <% message_replacements ||= {} %>
-  <% heading ||= nil %>
-  <% hidden ||= false %>
+<% message_replacements ||= {} %>
+<% heading ||= nil %>
+<% hidden ||= false %>
 
-  <% if object.errors.any? %>
-    <div class="notification error png_bg" style="<%= "display:none" if hidden %>">
-      <div>
-        <strong>
-          <% if heading %>
-            <%= heading %>
+<% if object.errors.any? %>
+  <div class="validation" style="<%= "display:none" if hidden %>">
+    <div>
+      <strong>
+        <% if heading %>
+          <%= heading %>
+        <% else %>
+          Could not <%= object.new_record? ?  'create' : 'update' %> <%= object.class.to_s.underscore.humanize %> due to the following <%= pluralize(object.errors.count, "error") %>:
+        <% end %>
+      </strong>
+      <ul>
+        <% messages = [] %>
+        <% object.errors.full_messages.each do |msg| %>
+          <% if to_replace = message_replacements.keys.detect {|k| msg.starts_with?(k) }  %>
+            <% messages <<  message_replacements[to_replace] %>
           <% else %>
-            Could not <%= object.new_record? ?  'create' : 'update' %> <%= object.class.to_s.underscore.humanize %> due to the following <%= pluralize(object.errors.count, "error") %>:
+            <% messages << msg %>
           <% end %>
-        </strong>
-        <ul>
-          <% messages = [] %>
-          <% object.errors.full_messages.each do |msg| %>
-            <% if to_replace = message_replacements.keys.detect {|k| msg.starts_with?(k) }  %>
-              <% messages <<  message_replacements[to_replace] %>
-            <% else %>
-              <% messages << msg %>
-            <% end %>
-          <% end %>
-          <% messages.uniq.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
+        <% end %>
+        <% messages.uniq.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
     </div>
-  <% end %>
+  </div>
+<% end %>

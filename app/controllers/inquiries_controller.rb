@@ -6,7 +6,14 @@ class InquiriesController < ApplicationController
   end
 
   def create
-    @inquiry = Inquiry.new
-    @success = @inquiry.save
+    @on_contact = true
+    @inquiry = Inquiry.new params[:inquiry]
+    if @inquiry.save
+      redirect_to inquiry_confirmed_path
+    else
+      render :new
+    end
   end
+
+
 end

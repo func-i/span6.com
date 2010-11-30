@@ -1,4 +1,6 @@
-<% form_for @inquiry, :remote => true do |f| %>
+<% form_for @inquiry  do |f| %>
+
+  <%= render 'shared/error_messages_list', :object => @inquiry, :heading => "Please address the following issues and try again:"   %>
 
   <p>
     <label>Your Name</label>
@@ -7,12 +9,12 @@
 
   <p>
     <label>Your Email</label>
-    <%= f.text_field :name, :class => "text_field required" %>
+    <%= f.text_field :email, :class => "text_field required" %>
   </p>
 
   <p class="last">
     <label>Subject</label>
-    <%= f.select :subject, ['General Support'], {}, :class => "text_field"  %>
+    <%= f.select :subject, ['General Support', 'Feedback', 'Inquiry', 'Other'], {}, :class => "text_field"  %>
     <!--<select name="subject" id="subject" class="text_field">
       <option value="General Support">General Support</option>
     </select>-->

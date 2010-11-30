@@ -564,7 +564,9 @@ form p {
 }
 form p.last { margin-right: 0; }
 form p.message { margin-top: 20px; float: none; }
-p.validation { font-weight: bold; }
+p.validation, div.validation { font-weight: bold; color: red; margin-bottom: 20px; }
+div.validation ul { margin-left: 20px; }
+p.confirmation { font-weight: bold; color: #30AA60; }
 p.error { color: #DD3030; font-weight: bold; }
 form label {
   display: block;
@@ -613,4 +615,7 @@ hr {
 
 .disabled {
   opacity: 0.5;
+}
+.field_with_errors {
+  display: inline;
 }

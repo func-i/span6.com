@@ -45,5 +45,7 @@ module AwesomeHome
 #      :exception_recipients => %w{kvirani@osamm.com}
 
     config.time_zone = "Eastern Time (US & Canada)"
+
+    ActionView::Base.field_error_proc = proc { |input, instance| input }
   end
 end
