@@ -38,5 +38,12 @@ module AwesomeHome
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+
+    config.middleware.use ::ExceptionNotifier,
+      :email_prefix => "[#{Rails.env}] OSAMM - ",
+      :sender_address => %{"notifier" <notifier@span6.com>},
+      :exception_recipients => %w{kvirani@osamm.com}
+
+    config.time_zone = "Eastern Time (US & Canada)"
   end
 end

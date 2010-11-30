@@ -46,4 +46,13 @@ AwesomeHome::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :domain               => 'span6.com',
+    :user_name            => 'notifier@span6.com',
+    :password             => 'notifier123',
+    :authentication       => 'plain',
+    :enable_starttls_auto => true  }
 end

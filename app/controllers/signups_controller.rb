@@ -5,6 +5,8 @@ class SignupsController < ApplicationController
   end
 
   def create
+    @signup = Signup.new params[:signup]
+    @success = @signup.save
     
   end
 
