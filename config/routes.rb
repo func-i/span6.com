@@ -3,7 +3,7 @@ AwesomeHome::Application.routes.draw do
   # first created -> highest priority.
 
   get 'about' => 'site#about'
-  get 'tour' => 'site#tour'
+#  get 'tour' => 'site#tour'
   get 'pricing' => 'site#pricing'
   get 'contact' => 'inquiries#new'
   get 'signup' => 'signups#new'

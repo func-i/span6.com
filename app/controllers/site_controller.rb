@@ -1,5 +1,6 @@
 class SiteController < ApplicationController
 
+  caches_page :index, :about, :pricing, :contact
 
   def index
     @on_home = true
@@ -9,9 +10,9 @@ class SiteController < ApplicationController
     @on_about = true
   end
 
-  def tour
-    @on_tour = true
-  end
+#  def tour
+#    @on_tour = true
+#  end
 
   def pricing
     @on_pricing = true

@@ -17,8 +17,9 @@
 <% end %>
 <div class="header header_home page">
 
-  <div class="price_tag"></div>
-
+  <% if false %>
+    <div class="price_tag"></div>
+  <% end %>
 
   <!-- Start App Screenshot -->
   <img src="/images/screenshot4.png" alt="" class="main_screenshot" />
@@ -28,15 +29,14 @@
   <div class="info">
     <h1>The Perfect CRM for YOUR Needs.</h1>
     <p>
-      OSAMM ('Awesome') is a new cutting-edge CRM that  enables online advertisers to easily channel traffic from affiliate campaigns into multiple landing pages, convert the visitors into leads or customers, and track the performance of the overall flow.
+      OSAMM ( <%= n %> ) is a new cutting-edge CRM that enables online advertisers to easily channel traffic from affiliate campaigns into multiple landing pages, convert the visitors into leads or customers, and track the performance of the overall flow.
       But that's just the beginning!
       <br/>
-      Sign up for a <span class="highlight_light">Free Demo and a 30-day Trial</span> to play around with it and decide if it Awesome-CRM is right for you.
-
+      <%= n %> can also help you generate, manage and engage your customers and leads. It can automatically assess fraud risk to save you money on your CPAs.
     </p>
 
-    <a href="signup.html" class="button icon"><img src="/images/go_icon.png" alt="" /><span>Signup Now!</span></a>
-    <span class="trial">30-day free trial. No credit card required.</span>
+    <a href="signup.html" class="button icon"><img src="/images/go_icon.png" alt="" /><span>Request a Demo</span></a>
+    <span class="trial">Or call us directly at <%= phone_number %>.</span>
   </div>
   <!-- End App Info -->
   <div class="clear"></div>

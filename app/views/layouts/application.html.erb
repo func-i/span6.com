@@ -16,7 +16,7 @@
         <ul>
           <li<%= raw ' class="active"' if @on_home %>><a href="/">Home</a></li>
           <li<%= raw ' class="active"' if @on_about %>><a href="/about">About</a></li>
-          <li<%= raw ' class="active"' if @on_tour %>><a href="/tour">Tour</a></li>
+          <!--<li<%= raw ' class="active"' if @on_tour %>><a href="/tour">Tour</a></li>-->
           <li<%= raw ' class="active"' if @on_pricing %>><a href="/pricing">Pricing</a></li>
           <li<%= raw ' class="active"' if @on_contact %>><a href="/inquiries/new">Contact</a></li>
         </ul>
@@ -33,11 +33,11 @@
     </div>
 
     <div id="footer" class="page">
-      <p>Copyright 2010 OSAMM.com. The Perfect Affiliate Marketing CRM Solution.</p>
+      <p>Copyright 2010 OSAMM.com. <%= n %>, The Perfect CRM for YOUR Needs.</p>
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/about">About</a></li>
-        <li><a href="/tour">Tour</a></li>
+        <!--<li><a href="/tour">Tour</a></li>-->
         <li><a href="/pricing">Pricing</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
