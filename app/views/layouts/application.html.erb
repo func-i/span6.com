@@ -5,17 +5,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="description" content="OSAMM ('Awesome') is an Affiliate Marketing CRM that enables online advertisers to easily channel traffic from their media partners into multiple landing pages, convert the visitors into leads or customers, and track the performance of the overall flow." />
     <meta name="keywords" content="CRM,customer relationship management,lead generation,e-commerce,affiliate marketing,campaigns,offers,split testing,landing pages,fraud detection,merchant accounts,load balancing" />
-    <link rel="stylesheet" type="text/css" href="/stylesheets/styles.css" />
-    <link rel="stylesheet" type="text/css" href="/javascripts/fancybox/jquery.fancybox-1.3.1.css" />
-    <link rel="stylesheet" type="text/css" href="/stylesheets/green-blue.css" media="screen" />
+    <%= stylesheet_link_tag 'styles', '/javascripts/fancybox/jquery.fancybox-1.3.1.css', 'green-blue', :cache => "cache/site" %>
+    <%= javascript_include_tag 'jquery', 'jquery.tools', 'fancybox/jquery.fancybox-1.3.1.pack',
+      'rails', 'application', 'site', :cache => 'cache/site' %>
     <%= render 'layouts/ga'  if Rails.env.production? %>
-
-    <script type="text/javascript" src="/javascripts/jquery.js"></script>
-    <script type="text/javascript" src="/javascripts/jquery.tools.js"></script>
-    <script type="text/javascript" src="/javascripts/fancybox/jquery.fancybox-1.3.1.pack.js"></script>
-    <script type="text/javascript" src="/javascripts/rails.js"></script>
-    <script type="text/javascript" src="/javascripts/application.js"></script>
-    <script type="text/javascript" src="/javascripts/site.js"></script>
   </head>
   <body>
     <div id="header">
