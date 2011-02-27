@@ -18,13 +18,14 @@
 
       var os = detectMobile(navigator.userAgent);
       if (os.android) {
-        $('#main-video-source').attr('src', '/s6-home-video-cut4.iphone.m4v');
-        $('video').mediaelementplayer();
+        var html = '<video src="/s6-home-video-cut4.iphone.m4v" width="960" height="568" controls="controls" preload="true">';
+        $('#videocontainer').html(html);
       } else if (os.blackberry) {
-        $('#main-video-source').attr('src', '/s6-home-video-cut4.iphone.m4v');
-        $('video').mediaelementplayer();
+        var html = '<video src="/s6-home-video-cut4.iphone.m4v" width="960" height="568" controls="controls" preload="true">';
+        $('#videocontainer').html(html);
       } else if (os.ipad) {
-        $('video').mediaelementplayer();
+        var html = '<video src="/s6-home-video-cut4.ipad.m4v" width="960" height="568" controls="controls" preload="true">';
+        $('#videocontainer').html(html);
       } else if (os.iphone) {
         var html = '<video src="/s6-home-video-cut4.iphone.m4v" width="960" height="568" controls="controls" preload="true">';
         $('#videocontainer').html(html);
