@@ -7,7 +7,7 @@
     <meta name="keywords" content="Landing page integration,lead generation,e-commerce,affiliate marketing,campaigns,offers,split testing,landing pages,fraud detection,merchant accounts,payment gateways,crm" />
     <%= stylesheet_link_tag 'styles', '/javascripts/fancybox/jquery.fancybox-1.3.4.css', 'green-blue', :cache => "cache/site" %>
     <%= javascript_include_tag 'jquery', 'jquery.tools', 'fancybox/jquery.fancybox-1.3.4.pack',
-      'rails', 'application', 'site', :cache => 'cache/site' %>
+      'rails', 'application', 'site','detectmobilebrowser', :cache => 'cache/site' %>
     <%= render 'layouts/ga'  if Rails.env.production? %>
   </head>
   <body>

@@ -14,32 +14,24 @@
       });
 
       // Configure scrollable plugin
-      $(".scrollable").scrollable({ });
-  <%- if false -%>
-        $('a#videolink').fancybox({
-          type: 'inline',
-          overlayOpacity: 0.8,
-          overlayColor: '#336622',
-          width: 960,
-          height: 568,
-          scrolling: 'no',
-          autoScale: false,
-          padding: 0,
-          margin: 0,
-          href: '#video',
-          autoDimensions: false,
-          onComplete: function() {
-            if (!player) {
-              player = new MediaElementPlayer('video', {
-                defaultVideoWidth: 388,
-                defaultVideoHeight: 265
-              });
-            }
-            player.play();
-          }
-        });
-  <% end %>
-      $('video').mediaelementplayer();
+      //$(".scrollable").scrollable({ });
+
+      var os = detectMobile(navigator.userAgent);
+      if (os.android) {
+        $('#main-video-source').attr('src', '/s6-home-video-cut4.iphone.m4v');
+        $('video').mediaelementplayer();
+      } else if (os.blackberry) {
+        $('#main-video-source').attr('src', '/s6-home-video-cut4.iphone.m4v');
+        $('video').mediaelementplayer();
+      } else if (os.ipad) {
+        $('video').mediaelementplayer();
+      } else if (os.iphone) {
+        $('#main-video-source').attr('src', '/s6-home-video-cut4.iphone.m4v');
+        $('video').mediaelementplayer();
+      } else {
+        $('video').mediaelementplayer();
+      }
+      
     });
   </script>
 <% end %>
@@ -56,53 +48,16 @@
   <br/>
 
   <video width="960" height="568" controls="controls" preload="true">
-    <!-- MP4 for Safari, IE9, iPhone, iPad, Android, and Windows Phone 7 -->
-    <source type="video/mp4" src="/s6-home-video-cut4.mp4" />
-    <!-- WebM/VP8 for Firefox4, Opera, and Chrome -->
+    <source type="video/mp4" src="/s6-home-video-cut4.mp4" id="main-video-source" />
     <source type="video/webm" src="/s6-home-video-cut4.webm" />
-    <!-- Ogg/Vorbis for older Firefox and Opera versions -->
     <source type="video/ogg" src="/s6-home-video-cut4.ogv" />
-    <!-- Flash fallback for non-HTML5 browsers without JavaScript -->
     <object width="960" height="568" type="application/x-shockwave-flash" data="mediaelement/flashmediaelement.swf">
       <param name="movie" value="mediaelement/flashmediaelement.swf" />
       <param name="flashvars" value="controls=true&file=/s6-home-video-cut4.mp4" />
-      <!-- Image as a last resort -->
       <img src="/images/screenshot4.png" width="960" height="568" title="No video playback capabilities" />
     </object>
   </video>
 
-
-  <% if false %>
-    <!-- Start App Screenshot -->
-    <div style="display:none">
-      <div id="video">
-        <video width="960" height="568" controls="controls" preload="none">
-          <!-- MP4 for Safari, IE9, iPhone, iPad, Android, and Windows Phone 7 -->
-          <source type="video/mp4" src="/s6-home-video-cut4.mp4" />
-          <!-- WebM/VP8 for Firefox4, Opera, and Chrome -->
-          <source type="video/webm" src="/s6-home-video-cut4.webm" />
-          <!-- Ogg/Vorbis for older Firefox and Opera versions -->
-          <source type="video/ogg" src="/s6-home-video-cut4.ogv" />
-          <!-- Flash fallback for non-HTML5 browsers without JavaScript -->
-          <object width="960" height="568" type="application/x-shockwave-flash" data="mediaelement/flashmediaelement.swf">
-            <param name="movie" value="mediaelement/flashmediaelement.swf" />
-            <param name="flashvars" value="controls=true&file=/s6-home-video-cut4.mp4" />
-            <!-- Image as a last resort -->
-            <img src="/images/screenshot4.png" width="960" height="568" title="No video playback capabilities" />
-          </object>
-        </video>
-      </div>
-    </div>
-  <% end %>
-
-  <% if false %>
-    <div class="main_screenshot">
-      <a href="#video" id="videolink">
-        <img src="/images/screenshot4.png" alt="" />
-        <div class="mejs-overlay-button"></div>
-      </a>
-    </div>
-  <% end %>
 
   <!-- End App Screenshot -->
 
