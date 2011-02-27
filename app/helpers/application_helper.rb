@@ -5,7 +5,7 @@ module ApplicationHelper
   end
 
   def n
-    raw "<span class='name'>Awesome CRM</span>"
+    raw "<span class='name'>Span6</span>"
   end
 
   def check

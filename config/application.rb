@@ -40,9 +40,9 @@ module AwesomeHome
     config.filter_parameters += [:password]
 
 #    config.middleware.use ::ExceptionNotifier,
-#      :email_prefix => "[#{Rails.env}] OSAMM - ",
+#      :email_prefix => "[#{Rails.env}] Span6 - ",
 #      :sender_address => %{"notifier" <notifier@span6.com>},
-#      :exception_recipients => %w{kvirani@osamm.com}
+#      :exception_recipients => %w{kvirani@span6.com}
 
     config.time_zone = "Eastern Time (US & Canada)"
 

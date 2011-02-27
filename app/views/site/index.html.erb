@@ -1,5 +1,8 @@
 <% content_for :js do %>
+  <script src="/mediaelement/mediaelement-and-player.min.js"></script>
+  <link rel="stylesheet" href="/mediaelement/mediaelementplayer.css" />
   <script type="text/javascript" charset="utf-8">
+    var player = null;
     $(document).ready(function() {
       // Configure fancybox plugin
       $("a.screenshot").fancybox({
@@ -12,6 +15,31 @@
 
       // Configure scrollable plugin
       $(".scrollable").scrollable({ });
+  <%- if false -%>
+        $('a#videolink').fancybox({
+          type: 'inline',
+          overlayOpacity: 0.8,
+          overlayColor: '#336622',
+          width: 960,
+          height: 568,
+          scrolling: 'no',
+          autoScale: false,
+          padding: 0,
+          margin: 0,
+          href: '#video',
+          autoDimensions: false,
+          onComplete: function() {
+            if (!player) {
+              player = new MediaElementPlayer('video', {
+                defaultVideoWidth: 388,
+                defaultVideoHeight: 265
+              });
+            }
+            player.play();
+          }
+        });
+  <% end %>
+      $('video').mediaelementplayer();
     });
   </script>
 <% end %>
@@ -21,15 +49,68 @@
     <div class="price_tag"></div>
   <% end %>
 
-  <!-- Start App Screenshot -->
-  <img src="/images/screenshot4.png" alt="" class="main_screenshot" />
+  <h1 style="font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif; font-size: 35px; color: #777;">
+    Powerful campaign, affiliate and customer management.<br/>
+    Marketing automation made simple.
+  </h1>
+  <br/>
+
+  <video width="960" height="568" controls="controls" preload="true">
+    <!-- MP4 for Safari, IE9, iPhone, iPad, Android, and Windows Phone 7 -->
+    <source type="video/mp4" src="/s6-home-video-cut4.mp4" />
+    <!-- WebM/VP8 for Firefox4, Opera, and Chrome -->
+    <source type="video/webm" src="myvideo.webm" />
+    <!-- Ogg/Vorbis for older Firefox and Opera versions -->
+    <source type="video/ogg" src="myvideo.ogv" />
+    <!-- Flash fallback for non-HTML5 browsers without JavaScript -->
+    <object width="960" height="568" type="application/x-shockwave-flash" data="mediaelement/flashmediaelement.swf">
+      <param name="movie" value="flashmediaelement.swf" />
+      <param name="flashvars" value="controls=true&file=/s6-home-video-cut4.mp4" />
+      <!-- Image as a last resort -->
+      <img src="/images/screenshot4.png" width="960" height="568" title="No video playback capabilities" />
+    </object>
+  </video>
+
+
+  <% if false %>
+    <!-- Start App Screenshot -->
+    <div style="display:none">
+      <div id="video">
+        <video width="960" height="568" controls="controls" preload="none">
+          <!-- MP4 for Safari, IE9, iPhone, iPad, Android, and Windows Phone 7 -->
+          <source type="video/mp4" src="/s6-home-video-cut4.mp4" />
+          <!-- WebM/VP8 for Firefox4, Opera, and Chrome -->
+          <source type="video/webm" src="myvideo.webm" />
+          <!-- Ogg/Vorbis for older Firefox and Opera versions -->
+          <source type="video/ogg" src="myvideo.ogv" />
+          <!-- Flash fallback for non-HTML5 browsers without JavaScript -->
+          <object width="960" height="568" type="application/x-shockwave-flash" data="mediaelement/flashmediaelement.swf">
+            <param name="movie" value="flashmediaelement.swf" />
+            <param name="flashvars" value="controls=true&file=/s6-home-video-cut4.mp4" />
+            <!-- Image as a last resort -->
+            <img src="/images/screenshot4.png" width="960" height="568" title="No video playback capabilities" />
+          </object>
+        </video>
+      </div>
+    </div>
+  <% end %>
+
+  <% if false %>
+    <div class="main_screenshot">
+      <a href="#video" id="videolink">
+        <img src="/images/screenshot4.png" alt="" />
+        <div class="mejs-overlay-button"></div>
+      </a>
+    </div>
+  <% end %>
+
   <!-- End App Screenshot -->
 
   <!-- Start App Info -->
-  <div class="info">
-    <h1>The Perfect CRM for YOUR Needs.</h1>
+
+  <% if false %>
     <p>
-      OSAMM ( <%= n %> ) is a new cutting-edge CRM that enables online advertisers to easily channel traffic from affiliate campaigns into multiple landing pages, convert the visitors into leads or customers, and track the performance of the overall flow.
+      <%= n %> is a new cutting-edge CRM that enables online advertisers to easily channel traffic from affiliate campaigns into multiple landing pages, convert the visitors into leads or customers, and track the performance of the overall flow.
       But that's just the beginning!
       <br/>
       <%= n %> can also help you generate, manage and engage your customers and leads. It can automatically assess fraud risk to save you money on your CPAs.
@@ -37,68 +118,68 @@
 
     <a href="<%= new_signup_path %>" class="button icon"><img src="/images/go_icon.png" alt="" /><span>Request a Demo</span></a>
     <span class="trial">Or call us directly at <%= phone_number %>.</span>
-  </div>
+  <% end %>
   <!-- End App Info -->
   <div class="clear"></div>
 
 </div>
 
 <div id="home" class="padding">
+  <% if false %>
+    <div id="screenshots">
 
-  <div id="screenshots">
-
-    <div class="section_title">
-      <h3>Screenshots</h3>
-    </div>
-
-    <a href="javascript:;" class="controls prev">Previous</a>
-
-    <div class="scrollable">
-      <div class="items">
-        <!-- Start Screenshot Group 1 -->
-        <ul>
-          <li><a href="/images/screenshots/dash-01.png" class="screenshot" rel="group"><img src="/images/screenshots/thumbs/dash-01.png" alt="" /></a></li>
-          <li><a href="/images/screenshots/dash-02.png" class="screenshot" rel="group"><img src="/images/screenshots/thumbs/dash-02.png" alt="" /></a></li>
-          <li><a href="/images/screenshots/dash-03.png" class="screenshot" rel="group"><img src="/images/screenshots/thumbs/dash-03.png" alt="" /></a></li>
-          <li><a href="/images/screenshots/roles-01.png" class="screenshot" rel="group"><img src="/images/screenshots/thumbs/roles-01.png" alt="" /></a></li>
-          <li><a href="/images/screenshots/subs-01.png" class="screenshot" rel="group"><img src="/images/screenshots/thumbs/subs-01.png" alt="" /></a></li>
-        </ul>
-        <!-- End Screenshot Group 1 -->
-        <!-- Start Screenshot Group 2 -->
-        <ul>
-          <li><a href="/images/screenshots/order-01.png" class="screenshot" rel="group"><img src="/images/screenshots/thumbs/order-01.png" alt="" /></a></li>
-          <li><a href="/images/screenshots/risk-01.png" class="screenshot" rel="group"><img src="/images/screenshots/thumbs/risk-01.png" alt="" /></a></li>
-          <li><a href="/images/screenshots/plans-01.png" class="screenshot" rel="group"><img src="/images/screenshots/thumbs/plans-01.png" alt="" /></a></li>
-          <li><a href="/images/screenshots/gateways-01.png" class="screenshot" rel="group"><img src="/images/screenshots/thumbs/gateways-01.png" alt="" /></a></li>
-          <li><a href="/images/screenshots/reports-fraud-01.png" class="screenshot" rel="group"><img src="/images/screenshots/thumbs/reports-fraud-01.png" alt="" /></a></li>
-        </ul>
-        <!-- End Screenshot Group 2 -->
-        <!-- Start Screenshot Group 3 -->
-        <ul>
-          <li><a href="/images/screenshots/fraud-01.png" class="screenshot" rel="group"><img src="/images/screenshots/thumbs/reports-fraud-02.png" alt="" /></a></li>
-          <li><a href="/images/screenshots/reports-perf-01.png" class="screenshot" rel="group"><img src="/images/screenshots/thumbs/reports-perf-01.png" alt="" /></a></li>
-          <li><a href="/images/screenshots/customers-01.png" class="screenshot" rel="group"><img src="/images/screenshots/thumbs/customers-01.png" alt="" /></a></li>
-          <li><a href="/images/screenshots/notes-01.png" class="screenshot" rel="group"><img src="/images/screenshots/thumbs/notes-01.png" alt="" /></a></li>
-          <li><a href="/images/screenshots/notes-02.png" class="screenshot" rel="group"><img src="/images/screenshots/thumbs/notes-02.png" alt="" /></a></li>
-        </ul>
-        <!-- End Screenshot Group 3 -->
-        <!-- Start Screenshot Group 4 -->
-        <ul>
-          <li><a href="/images/screenshots/settings-01.png" class="screenshot" rel="group"><img src="/images/screenshots/thumbs/settings-01.png" alt="" /></a></li>
-        </ul>
-        <!-- End Screenshot Group 4 -->
+      <div class="section_title">
+        <h3>Screenshots</h3>
       </div>
+
+      <a href="javascript:;" class="controls prev">Previous</a>
+
+      <div class="scrollable">
+        <div class="items">
+          <!-- Start Screenshot Group 1 -->
+          <ul>
+            <li><a href="/images/screenshots/dash-01.png" class="screenshot" rel="group"><img src="/images/screenshots/thumbs/dash-01.png" alt="" /></a></li>
+            <li><a href="/images/screenshots/dash-02.png" class="screenshot" rel="group"><img src="/images/screenshots/thumbs/dash-02.png" alt="" /></a></li>
+            <li><a href="/images/screenshots/dash-03.png" class="screenshot" rel="group"><img src="/images/screenshots/thumbs/dash-03.png" alt="" /></a></li>
+            <li><a href="/images/screenshots/roles-01.png" class="screenshot" rel="group"><img src="/images/screenshots/thumbs/roles-01.png" alt="" /></a></li>
+            <li><a href="/images/screenshots/subs-01.png" class="screenshot" rel="group"><img src="/images/screenshots/thumbs/subs-01.png" alt="" /></a></li>
+          </ul>
+          <!-- End Screenshot Group 1 -->
+          <!-- Start Screenshot Group 2 -->
+          <ul>
+            <li><a href="/images/screenshots/order-01.png" class="screenshot" rel="group"><img src="/images/screenshots/thumbs/order-01.png" alt="" /></a></li>
+            <li><a href="/images/screenshots/risk-01.png" class="screenshot" rel="group"><img src="/images/screenshots/thumbs/risk-01.png" alt="" /></a></li>
+            <li><a href="/images/screenshots/plans-01.png" class="screenshot" rel="group"><img src="/images/screenshots/thumbs/plans-01.png" alt="" /></a></li>
+            <li><a href="/images/screenshots/gateways-01.png" class="screenshot" rel="group"><img src="/images/screenshots/thumbs/gateways-01.png" alt="" /></a></li>
+            <li><a href="/images/screenshots/reports-fraud-01.png" class="screenshot" rel="group"><img src="/images/screenshots/thumbs/reports-fraud-01.png" alt="" /></a></li>
+          </ul>
+          <!-- End Screenshot Group 2 -->
+          <!-- Start Screenshot Group 3 -->
+          <ul>
+            <li><a href="/images/screenshots/fraud-01.png" class="screenshot" rel="group"><img src="/images/screenshots/thumbs/reports-fraud-02.png" alt="" /></a></li>
+            <li><a href="/images/screenshots/reports-perf-01.png" class="screenshot" rel="group"><img src="/images/screenshots/thumbs/reports-perf-01.png" alt="" /></a></li>
+            <li><a href="/images/screenshots/customers-01.png" class="screenshot" rel="group"><img src="/images/screenshots/thumbs/customers-01.png" alt="" /></a></li>
+            <li><a href="/images/screenshots/notes-01.png" class="screenshot" rel="group"><img src="/images/screenshots/thumbs/notes-01.png" alt="" /></a></li>
+            <li><a href="/images/screenshots/notes-02.png" class="screenshot" rel="group"><img src="/images/screenshots/thumbs/notes-02.png" alt="" /></a></li>
+          </ul>
+          <!-- End Screenshot Group 3 -->
+          <!-- Start Screenshot Group 4 -->
+          <ul>
+            <li><a href="/images/screenshots/settings-01.png" class="screenshot" rel="group"><img src="/images/screenshots/thumbs/settings-01.png" alt="" /></a></li>
+          </ul>
+          <!-- End Screenshot Group 4 -->
+        </div>
+      </div>
+
+      <a href="javascript:;" class="controls next">Next</a>
+
+      <div class="clear"></div>
     </div>
-
-    <a href="javascript:;" class="controls next">Next</a>
-
-    <div class="clear"></div>
-  </div>
-
+  <% end %>
   <div id="features">
 
     <div class="section_title">
-      <h3>Features &amp; Specs</h3>
+      <h3>Feature Overview</h3>
     </div>
 
     <p>
@@ -106,13 +187,13 @@
       <img src="/images/icons/track.gif" alt="" />
       Create, manage and engage your customers through one platform.
       A complete detailed history log tells you everything you need to know before you engage them.
-      A Call Centre team can easily use OSAMM to manage customer relations without security concerns.
+      A Call Centre team can easily use <%=n%> to manage customer relations without security concerns.
     </p>
 
     <p>
       <b>Simple Landing Page Integration</b>
       <img src="/images/features/paint.png" style="height:64px;width:64px;" alt="" />
-      Integrate new and existing landing pages into OSAMM extremely quickly and without any developers.
+      Integrate new and existing landing pages into <%=n%> extremely quickly and without any developers.
       Simply paste in the Javascript code snippet into your pages and they are ready to test and deploy!
     </p>
 
@@ -136,7 +217,7 @@
     <p>
       <b>Affiliate Portals</b>
       <img src="/images/icons/dude.gif" alt="" />
-      Allow your affiliates to log into your OSAMM platform with a limited dashboard, reports and feature set.
+      Allow your affiliates to log into your <%=n%> platform with a limited dashboard, reports and feature set.
       Advanced security ensures that your Affiliates can only see their own statistics.
     </p>
 
@@ -206,7 +287,7 @@
     <p>
       <b>Dedicated Hassle-Free SaaS</b>
       <img src="/images/features/dash.png" alt="" />
-      Unlike most CRM platforms, OSAMM can be hosted on a dedicated server and database so that the performance and issues of other sites does not affect yours.
+      Unlike most CRM platforms, <%=n%> can be hosted on a dedicated server and database so that the performance and issues of other sites does not affect yours.
       It also gives us the power to customize it for your specific business needs without affecting other clients.
     </p>
 
@@ -214,7 +295,7 @@
       <b>Customizable to YOUR Needs</b>
       <img src="/images/features/custom.png" alt="" />
       Want features that are very specific to your business? 
-      No problem. We can customize OSAMM to fit your needs quickly and cheaply!
+      No problem. We can customize <%=n%> to fit your needs quickly and cheaply!
 
     </p>
 

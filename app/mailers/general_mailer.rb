@@ -3,6 +3,6 @@ class GeneralMailer < ActionMailer::Base
 
   def signup_request(signup)
     @signup = signup
-    mail(:to => "kvirani@osamm.com", :subject => "OSAMM Demo Request")
+    mail(:to => "kvirani@span6.com", :subject => "Span6 Demo Request")
   end
 end
