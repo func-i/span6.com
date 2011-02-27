@@ -26,9 +26,9 @@
       } else if (os.ipad) {
         $('video').mediaelementplayer();
       } else if (os.iphone) {
-        $('#main-video-source').attr('src', '/s6-home-video-cut4.iphone.m4v');
-        $('video').mediaelementplayer();
-        console.log($('#main-video-source').attr('src'));
+        var html = '<video src="/s6-home-video-cut4.iphone.m4v" width="960" height="568" controls="controls" preload="true">';
+        $('#videocontainer').html(html);
+        //$('video').mediaelementplayer();
       } else {
         $('video').mediaelementplayer();
       }
@@ -48,16 +48,18 @@
   </h1>
   <br/>
 
-  <video width="960" height="568" controls="controls" preload="true">
-    <source type="video/mp4" src="/s6-home-video-cut4.mp4" id="main-video-source" />
-    <source type="video/webm" src="/s6-home-video-cut4.webm" />
-    <source type="video/ogg" src="/s6-home-video-cut4.ogv" />
-    <object width="960" height="568" type="application/x-shockwave-flash" data="mediaelement/flashmediaelement.swf">
-      <param name="movie" value="mediaelement/flashmediaelement.swf" />
-      <param name="flashvars" value="controls=true&file=/s6-home-video-cut4.mp4" />
-      <img src="/images/screenshot4.png" width="960" height="568" title="No video playback capabilities" />
-    </object>
-  </video>
+  <div id="videocontainer">
+    <video width="960" height="568" controls="controls" preload="true">
+      <source type="video/mp4" src="/s6-home-video-cut4.mp4" id="main-video-source" />
+      <source type="video/webm" src="/s6-home-video-cut4.webm" />
+      <source type="video/ogg" src="/s6-home-video-cut4.ogv" />
+      <object width="960" height="568" type="application/x-shockwave-flash" data="mediaelement/flashmediaelement.swf">
+        <param name="movie" value="mediaelement/flashmediaelement.swf" />
+        <param name="flashvars" value="controls=true&file=/s6-home-video-cut4.mp4" />
+        <img src="/images/screenshot4.png" width="960" height="568" title="No video playback capabilities" />
+      </object>
+    </video>
+  </div>
 
 
   <!-- End App Screenshot -->
