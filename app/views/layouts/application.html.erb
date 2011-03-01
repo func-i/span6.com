@@ -5,9 +5,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="description" content="Span6 is powerful campaign, affiliate and customer management platform that enabling advertisers to channel traffic from their media partners into multiple landing pages, convert the visitors into leads or customers, and track the performance of the overall flow." />
     <meta name="keywords" content="Landing page integration,lead generation,e-commerce,affiliate marketing,campaigns,offers,split testing,landing pages,fraud detection,merchant accounts,payment gateways,crm" />
-    <%= stylesheet_link_tag 'styles', '/javascripts/fancybox/jquery.fancybox-1.3.4.css', 'green-blue', :cache => "cache/site" %>
+    <%= stylesheet_link_tag 'styles', '/javascripts/fancybox/jquery.fancybox-1.3.4.css', 
+      'green-blue', '/mediaelement/mediaelementplayer.css', :cache => "cache/site" %>
     <%= javascript_include_tag 'jquery', 'jquery.tools', 'fancybox/jquery.fancybox-1.3.4.pack',
-      'rails', 'application', 'site','detectmobilebrowser', :cache => 'cache/site' %>
+      'rails', 'application', 'site','detectmobilebrowser','/mediaelement/mediaelement-and-player.min.js', :cache => 'cache/site' %>
+
     <%= render 'layouts/ga'  if Rails.env.production? %>
   </head>
   <body>

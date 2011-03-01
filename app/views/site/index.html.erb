@@ -1,10 +1,9 @@
 <% content_for :js do %>
-  <script src="/mediaelement/mediaelement-and-player.min.js"></script>
-  <link rel="stylesheet" href="/mediaelement/mediaelementplayer.css" />
   <script type="text/javascript" charset="utf-8">
     var player = null;
     $(document).ready(function() {
       // Configure fancybox plugin
+      /***********
       $("a.screenshot").fancybox({
         'transitionIn'	:	'elastic',
         'transitionOut'	:	'elastic',
@@ -14,8 +13,8 @@
       });
 
       // Configure scrollable plugin
-      //$(".scrollable").scrollable({ });
-
+      $(".scrollable").scrollable({ });
+       ***********/
       var os = detectMobile(navigator.userAgent);
       if (os.android) {
         var html = '<video poster="/images/s6-video-poster-v3.png" src="/s6-home-video-cut4.iphone.m4v" width="960" height="568" controls="controls" preload="true">';
@@ -31,7 +30,11 @@
         $('#videocontainer').html(html);
         //$('video').mediaelementplayer();
       } else {
-        $('video').mediaelementplayer();
+        $('video').mediaelementplayer({
+          defaultVideoWidth: 960,
+          defaultVideoHeight: 568,
+          pluginPath: '/mediaelement/'
+        });
       }
       
     });
