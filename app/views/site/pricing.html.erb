@@ -75,7 +75,7 @@
           <td>10</td>
           <td class="last">15</td>
         </tr>
-        <tr class="color">
+        <tr>
           <td>3</td>
           <td>10</td>
           <td>25</td>
@@ -93,7 +93,7 @@
           <td>5 GB</td>
           <td class="last">20 GB</td>
         </tr>
-        <tr>
+        <tr class="color">
           <td>Unlimited</td>
           <td>Unlimited</td>
           <td>Unlimited</td>
@@ -105,7 +105,6 @@
           <td>Unlimited</td>
           <td class="last">Unlimited</td>
         </tr>
-
         <tr class="color">
           <td><%= check %></td>
           <td><%= check %></td>
@@ -118,12 +117,6 @@
           <td><%= check %></td>
           <td class="last"><%= check %></td>
         </tr>
-        <tr>
-          <td><%= check %></td>
-          <td><%= check %></td>
-          <td><%= check %></td>
-          <td class="last"><%= check %></td>
-        </tr>
         <tr class="color">
           <td><%= check %></td>
           <td><%= check %></td>
@@ -131,12 +124,18 @@
           <td class="last"><%= check %></td>
         </tr>
         <tr>
+          <td><%= check %></td>
+          <td><%= check %></td>
+          <td><%= check %></td>
+          <td class="last"><%= check %></td>
+        </tr>
+        <tr class="color">
           <td><%= x %></td>
           <td><%= check %></td>
           <td><%= check %></td>
           <td class="last"><%= check %></td>
         </tr> 
-        <tr class="color">
+        <tr>
           <td><%= x %></td>
           <td><%= x %></td>
           <td><%= check %></td>
@@ -148,12 +147,11 @@
           <td><%= check %></td>
           <td class="last"><%= check %></td>
         </tr>
-
         <tr class="buttons">
-          <td><%= link_to '<span>Request a Demo</span>'.html_safe, new_signup_path, :class => "button" %></td>
-          <td><%= link_to '<span>Request a Demo</span>'.html_safe, new_signup_path, :class => "button" %></td>
-          <td><%= link_to '<span>Request a Demo</span>'.html_safe, new_signup_path, :class => "button" %></td>
-          <td><%= link_to '<span>Request a Demo</span>'.html_safe, new_signup_path, :class => "button" %></td>
+          <td><%= link_to '<img src="/images/go_icon.png" /><span>Request a Demo</span>'.html_safe, new_signup_path, :class => "button icon" %></td>
+          <td><%= link_to '<img src="/images/go_icon.png" /><span>Request a Demo</span>'.html_safe, new_signup_path, :class => "button icon" %></td>
+          <td><%= link_to '<img src="/images/go_icon.png" /><span>Request a Demo</span>'.html_safe, new_signup_path, :class => "button icon" %></td>
+          <td><%= link_to '<img src="/images/go_icon.png" /><span>Request a Demo</span>'.html_safe, new_signup_path, :class => "button icon" %></td>
         </tr>
       </tbody>
     </table>

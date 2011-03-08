@@ -174,7 +174,7 @@ div#page .header_home .info {
 }
 div#page .header_home .info h1 { padding: 0; margin-bottom: 15px; font-size: 30px; color: #363636; }
 div#page .header_home .info p{ font-size: 13px; color: #363636; margin-bottom: 30px; }
-div#page .header_home .info .trial { font-size: 11px; color: #7d7d7d; margin-left: 12px; }
+div#page .trial { font-size: 11px; color: #7d7d7d; margin-left: 12px; }
 div#page .top {
   background: url('/images/page_top.gif') no-repeat top;
   height: 23px;

@@ -15,18 +15,20 @@
   </div>
 
   <p>
-    <%= n %> is a new cutting-edge CRM that enables online advertisers to easily channel traffic from affiliate campaigns into multiple landing pages, convert the visitors into leads or customers, and track the performance of the overall flow.
+    <%= n %> is a new cutting-edge platform that enables online advertisers to easily channel traffic from affiliate campaigns into multiple landing pages, convert the visitors into leads or customers, and track the performance of the overall flow.
   </p>
   <p>
-    But that's just the beginning!
+    What's exciting is that this is merely one aspect of the ever growing platform that is <%= n %>.
+    <br/>
+    <% if false %>
+      <a href="/signup">Signup</a> now for a free one-on-one or conference-based Demo to truly see all that you'll be able to do with <%= n %>.
+    <% end %>
   </p>
-  <p>
-    
-  </p>
-  <p>
-    <a href="/signup">Signup</a> now for a free one-on-one or conference-based Demo of the platform
-  </p>
+<br/>
+  <a href="<%= new_signup_path %>" class="button icon"><img src="/images/go_icon.png" alt="" /><span>View our demo</span></a>
+  <span class="trial">Or call us directly at <%= phone_number %>.</span>
 
+  <div class="clear"></div>
   <br/>
 
   <div class="section_title">
