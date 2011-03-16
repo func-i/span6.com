@@ -11,6 +11,8 @@ AwesomeHome::Application.routes.draw do
   get 'signup_confirmed' => 'site#signup_confirmed'
   get 'inquiry_confirmed' => 'site#inquiry_confirmed'
 
+  get 'offers/trial1' => 'offers#trial1'
+
   resources :signups, :only => [:new, :create]
   resources :inquiries, :only => [:new, :create]
 

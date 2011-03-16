@@ -1,0 +1,271 @@
+<% content_for :js do %>
+  <script type="text/javascript" charset="utf-8">
+    var player = null;
+    $(document).ready(function() {
+      // Configure fancybox plugin
+      var os = detectMobile(navigator.userAgent);
+      if (os.android) {
+        var html = '<video poster="/images/s6-video-poster-v3.png" src="/s6-home-video-cut4.hero.mp4" width="960" height="568" controls="controls" preload="true">';
+        $('#videocontainer').html(html);
+      } else if (os.blackberry) {
+        var html = '<video poster="/images/s6-video-poster-v3.png" src="/s6-home-video-cut4.mobile.3gp" width="960" height="568" controls="controls" preload="true">';
+        $('#videocontainer').html(html);
+      } /*else if (os.ipad) {
+        var html = '<video poster="/images/s6-video-poster-v3.png" src="/s6-home-video-cut4.ipad.m4v" width="960" height="568" controls="controls" preload="true">';
+        $('#videocontainer').html(html);
+      }*/ else if (os.iphone) {
+        var html = '<video poster="/images/s6-video-poster-v3.png" src="/s6-home-video-cut4.iphone.m4v" width="960" height="568" controls="controls" preload="true">';
+        $('#videocontainer').html(html);
+        //$('video').mediaelementplayer();
+      } else {
+        player = new MediaElementPlayer('video',{
+          defaultVideoWidth: 960,
+          defaultVideoHeight: 568,
+          pluginPath: '/mediaelement/'
+        });
+      }
+
+    });
+  </script>
+<% end %>
+<div class="header header_home page" style="height: 760px">
+
+
+  <div class="price_tag" style="background: url('/images/price_tag.png') no-repeat top;top:-75px;right:-35px"></div>
+
+
+  <h1 style="font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif; font-size: 35px; color: #777;">
+    Stop trying to integrate six different platforms.<br/>
+    Span6 is everything you need in <span class="highlight_light">one innovative platform</span>.
+  </h1>
+  <br/>
+  <div style="margin:16px">
+    <center>
+      <a href="#contact" class="button icon">
+        <img src="/images/go_icon.png" alt="Go" /><span>Request a Free Demo</span></a>
+      <a href="#videocontainer" class="button icon" onclick="player.play(); return true;">
+        <img src="/images/go_icon.png" alt="Go" /><span>Watch Video</span></a>
+    </center>
+  </div>
+  <div style="margin:10px">
+    <center>
+      <span class="trial">Or call us directly at <strong><%= phone_number %></strong>.</span>
+    </center>
+  </div>
+
+
+  <div id="videocontainer">
+    <video width="960" height="568" controls="controls" preload="true" poster="/images/s6-video-poster-v3.png" src="/s6-home-video-cut4.mp4">
+      <source type="video/mp4" src="/s6-home-video-cut4.mp4" id="main-video-source" />
+      <source type="video/webm" src="/s6-home-video-cut4.webm" />
+      <source type="video/ogg" src="/s6-home-video-cut4.ogv" />
+      <source type='video/3gpp; codecs="mp4v.20.8, samr"' src='/s6-home-video-cut4.mobile.3gp' />
+    </video>
+  </div>
+
+  <!-- End App Screenshot -->
+
+  <div class="clear"></div>
+
+</div>
+
+<div id="home" class="padding">
+
+
+  <div style="margin:16px">
+    <center>
+      <a href="#contact" class="button icon">
+        <img src="/images/go_icon.png" alt="Go" /><span>Request a Free Demo</span></a>
+      <a href="#videocontainer" class="button icon" onclick="player.play(); return true;">
+        <img src="/images/go_icon.png" alt="Go" /><span>Watch Video</span></a>
+    </center>
+  </div>
+  <div>
+    <center>
+      <span class="trial">Or call us directly at <strong><%= phone_number %></strong>.</span>
+    </center>
+  </div>
+
+  <div id="features">
+
+    <div class="section_title">
+      <h3>Feature Overview</h3>
+    </div>
+
+    <p>
+      <b>Customer Management</b>
+      <img src="/images/icons/track.gif" alt="" />
+      Create, manage and engage your customers through one platform.
+      A complete detailed history log tells you everything you need to know before you engage them.
+      A Call Centre team can easily use <%=n%> to manage customer relations without security concerns.
+    </p>
+
+    <p>
+      <b>Simple Landing Page Integration</b>
+      <img src="/images/features/paint.png" style="height:64px;width:64px;" alt="" />
+      Integrate new and existing landing pages into <%=n%> extremely quickly and without any developers.
+      Simply paste in the Javascript code snippet into your pages and they are ready to test and deploy!
+    </p>
+
+    <p class="last">
+      <b>Sell Subscriptions &amp; Trial Offers</b>
+      <img src="/images/features/moneybag.png" alt="" />
+      Finally, a recurring billing system that is fully customizable and yet simple and easy to manage.
+      Create a subscription with any interval and with an optional trial period.
+    </p>
+
+    <div class="clear spacer"></div>
+
+    <p>
+      <b>Fraud Protection</b>
+      <img src="/images/features/shield.png" alt="" />
+      Automatically or Manually run our advanced Fraud Risk Analysis on your Leads or customers.
+      Place risky orders in a queue or assign them for further action.
+      Choose to reject sales that are above a certain risk threshold.
+    </p>
+
+    <p>
+      <b>Affiliate Portals</b>
+      <img src="/images/icons/dude.gif" alt="" />
+      Allow your affiliates to log into your <%=n%> platform with a limited dashboard, reports and feature set.
+      Advanced security ensures that your Affiliates can only see their own statistics.
+    </p>
+
+    <p class="last">
+      <b>Fully Secure &amp; Compliant</b>
+      <img src="/images/features/secure.png" alt="" />
+      A combination of 128-bit SSL Encryption and remote Level-1 PCI-compliant Credit Card storage facilities ensure
+      that you incur ZERO risk when dealing with sensitive customer information and get the best merchant rates.
+    </p>
+
+    <div class="clear spacer"></div>
+
+    <p>
+      <b>Lead Management</b>
+      <img src="/images/features/lead.png" style="height:64px;width:64px" alt="" />
+      Collect leads of any kind through your landing pages and engage them using communication templates.
+      Leads can also be grouped and exported with ease.
+    </p>
+
+    <p>
+      <b>Customizable Email Notifications</b>
+      <img src="/images/features/email.png" style="height:64px;width:64px;" alt="" />
+      Create dynamic email templates for any customer or lead related events such as Welcome, Order shipment and Cancellation.
+      Split test your emails with the same ease as testing your landing pages.
+    </p>
+
+    <p class="last">
+      <b>Interactive Dashboard</b>
+      <img src="/images/features/dash2.png" style="height:64px;width:64px;" alt="" />
+      A fully customizable and interactive dashboard presents you with the information you want, on demand.
+      From financial health to traffic reports to top performing campaigns, all the information is at your fingertips.
+    </p>
+
+    <div class="clear spacer"></div>
+
+
+    <p>
+      <b>Rich &amp; Real-time Reports</b>
+      <img src="/images/features/charts.png" alt="" />
+      On-demand reporting for all aspects of your business from sales to fraud to user activity.
+      See what's relevant using powerful filters and conditions.
+    </p>
+
+    <p>
+      <b>Fully Mobile Friendly</b>
+      <img src="/images/features/ipad.png" alt="" />
+      Not only can you view your dashboard and reports on the go,
+      but you can also manage all aspects of your store straight from your Smart-phone or iPad.
+    </p>
+
+    <p class="last">
+      <b>Online &amp; Offline E-commerce</b>
+      <img src="/images/features/credit_cards.png" style="height:64px;width:64px;" alt="" />
+      Channel sales through online traffic and landing pages or place orders over the phone.
+      Give your CSRs as much power to up-sell, down-sell and negotiate with your clients for optimum retention.
+    </p>
+
+    <div class="clear spacer"></div>
+
+    <p>
+      <b>Role-based Restrictions</b>
+      <img src="/images/features/key.png" alt="" />
+      Create as many roles as you want or use the pre-defined roles to get up and running quickly.
+      Roles allow you to restrict access and privileges for your users.
+    </p>
+
+    <p>
+      <b>Dedicated Hassle-Free SaaS</b>
+      <img src="/images/features/dash.png" alt="" />
+      Unlike most marketing platforms, <%= n %> can be hosted on a dedicated server and database so that the performance and issues of other sites does not affect yours.
+      It also gives us the power to customize it for your specific business needs without affecting other clients.
+    </p>
+
+    <p class="last">
+      <b>Customizable to YOUR Needs</b>
+      <img src="/images/features/custom.png" alt="" />
+      Want features that are very specific to your business?
+      No problem. We can customize <%=n%> to fit your needs quickly and cheaply!
+
+    </p>
+
+
+    <div class="clear"></div>
+  </div>
+
+  <div id="contact">
+    <div class="section_title">
+      <h3>Free Demo</h3>
+    </div>
+
+
+    <form>
+      <h2><span>Fill out the form below for your <span class="highlight_light">*FREE* consultation, demo and trial.</span></span></h2>
+
+      <p>
+        <label>First Name *</label>
+        <input type="text" name="first_name" class="text_field required" />
+      </p>
+
+      <p>
+        <label>Last Name *</label>
+        <input type="text" name="last_name" class="text_field required" />
+      </p>
+
+      <p>
+        <label>E-mail Address *</label>
+        <input type="text" name="email" class="text_field required email" />
+      </p>
+
+
+      <p>
+        <label>Phone Number</label>
+        <input type="text" name="phone_number" class="text_field" />
+      </p>
+
+
+      <p>
+        <label>Company</label>
+        <input type="text" name="custom[phone_number]" class="text_field" />
+      </p>
+
+      <p>
+        <label>Notes</label>
+        <textarea name="custom[notes]" class="text_field" style="width:248px;height:80px;"></textarea>
+      </p>
+
+      <div class="clear margin"></div>
+
+      <div class="send_form">
+        <a href="javascript:;" class="button submit"><span>Complete Signup</span></a>
+        <span class="trial">No obligations. We will contact you to setup a demo.</span>
+      </div>
+
+      <div class="clear margin"></div>
+    </form>
+    <div class="clear"></div>
+
+  </div>
+  <div class="clear"></div>
+
+</div>
