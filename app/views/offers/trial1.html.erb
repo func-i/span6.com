@@ -1,4 +1,5 @@
 <% content_for :js do %>
+    <%= javascript_include_tag 'jquery.scrollto-min' %>
   <script type="text/javascript" charset="utf-8">
     var player = null;
     $(document).ready(function() {
@@ -25,13 +26,20 @@
         });
       }
 
+      $('a.scrollto').click( function(e) {
+        var anchor = $(this).data('anchor');
+        e.stopPropagation();
+        $.scrollTo( anchor , 600);//, {easing:'elasout'} );
+        return false;
+      })
+
     });
   </script>
 <% end %>
 <div class="header header_home page" style="height: 760px">
 
 
-  <div class="price_tag" style="background: url('/images/price_tag.png') no-repeat top;top:-75px;right:-35px"></div>
+  <div class="price_tag" style="background: url('/images/price_tag.png') no-repeat top;top:-85px;right:-35px"></div>
 
 
   <h1 style="font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif; font-size: 35px; color: #777;">
@@ -41,10 +49,10 @@
   <br/>
   <div style="margin:16px">
     <center>
-      <a href="#contact" class="button icon">
+      <a href="#contact" data-anchor="#contact" class="button icon scrollto">
         <img src="/images/go_icon.png" alt="Go" /><span>Request a Free Demo</span></a>
-      <a href="#videocontainer" class="button icon" onclick="player.play(); return true;">
-        <img src="/images/go_icon.png" alt="Go" /><span>Watch Video</span></a>
+      <a href="#videocontainer" data-anchor="#videocontainer" class="button icon scrollto" onclick="player.play(); return true;">
+        <img src="/images/go_icon.png" alt="Go" /><span>Watch Introduction Video</span></a>
     </center>
   </div>
   <div style="margin:10px">
@@ -74,10 +82,10 @@
 
   <div style="margin:16px">
     <center>
-      <a href="#contact" class="button icon">
+      <a href="#contact" data-anchor="#contact" class="button icon scrollto">
         <img src="/images/go_icon.png" alt="Go" /><span>Request a Free Demo</span></a>
-      <a href="#videocontainer" class="button icon" onclick="player.play(); return true;">
-        <img src="/images/go_icon.png" alt="Go" /><span>Watch Video</span></a>
+      <a href="#videocontainer" data-anchor="#videocontainer" class="button icon scrollto" onclick="player.play(); return true;">
+        <img src="/images/go_icon.png" alt="Go" /><span>Watch Introduction Video</span></a>
     </center>
   </div>
   <div>
@@ -258,7 +266,7 @@
 
       <div class="send_form">
         <a href="javascript:;" class="button submit"><span>Complete Signup</span></a>
-        <span class="trial">No obligations. We will contact you to setup a demo.</span>
+        <span class="trial">We will ONLY use this information to contact you <span class="highlight_light">personally</span> to setup a demo.</span>
       </div>
 
       <div class="clear margin"></div>

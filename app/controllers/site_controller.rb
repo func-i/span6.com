@@ -15,6 +15,7 @@ class SiteController < ApplicationController
   end
 
   def pricing
+    raise ActiveRecord::RecordNotFound
     @on_pricing = true
   end
 
