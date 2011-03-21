@@ -1,5 +1,5 @@
 <% content_for :js do %>
-    <%= javascript_include_tag 'jquery.scrollto-min' %>
+  <%= javascript_include_tag 'jquery.scrollto-min', 'jquery.validate' %>
   <script type="text/javascript" charset="utf-8">
     var player = null;
     $(document).ready(function() {
@@ -31,17 +31,93 @@
         e.stopPropagation();
         $.scrollTo( anchor , 600);//, {easing:'elasout'} );
         return false;
-      })
+      });
 
     });
   </script>
+
+
+  <script type="text/javascript">
+    var osmJsHost = (("https:" == document.location.protocol) ? "https://self." : "http://self.") + 'osamm.com';
+    document.write(unescape("%3Cscript src='" + osmJsHost + "/assets/tracker.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    osm_tracker.s_id = 1;
+    osm_tracker.track();
+  </script>
+
+  <script>
+    function trackLead() {
+      osm_tracker.track({
+        lead: {
+          'first_name': $('#first_name').val(),
+          'last_name': $('#last_name').val(),
+          'email': $('#email').val(),
+
+          'address[phone1]': $('#phone').val(),
+
+          'custom[company]': $('#company').val(),
+          'custom[notes]': $('#notes').val()
+        }
+      });
+    }
+    
+    function formSubmit() {
+      trackLead();
+      $('#contact-form').hide();
+      $('#success-message').show();
+      $('#edit-request').show();
+      return false;
+    }
+
+    $(function() {
+      $('.text_field').blur(function(e) {
+        trackLead();
+      });
+      $('#edit-request').click(function() {
+        $('#contact-form').show();
+        $('#edit-request').hide();
+        return false;
+      });
+      $('form').validate({
+        errorContainer: '#message-box',
+        errorLabelContainer: '#message-box ul',
+        wrapper: 'li',
+        errorElement: 'em',
+        submitHandler: function(form) {
+          formSubmit();
+        },
+        rules: {
+          // simple rule, converted to {required:true}
+          name: "required",
+          // compound rule
+          email: {
+            required: true,
+            email: true
+          },
+          'address[phone1]': {
+            required: true,
+            phone: true
+          }
+        },
+        messages: {
+          first_name: "Please specify your first name, to avoid an awkward initial contact",
+          last_name:  "Please specify your last name, to avoid an awkward initial contact",
+          email: {
+            required: "We need your email address to contact you (and nothing more, promise.)",
+            email: "Your email address must be in the format of name@domain.com"
+          },
+          'address[phone1]': {
+            required: "We need your phone number to contact you (and nothing more, promise.)"
+          }
+        }
+      });
+    });
+  </script>
 <% end %>
+
 <div class="header header_home page" style="height: 760px">
-
-
   <div class="price_tag" style="background: url('/images/price_tag.png') no-repeat top;top:-85px;right:-35px"></div>
-
-
   <h1 style="font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif; font-size: 35px; color: #777;">
     Stop trying to integrate six different platforms.<br/>
     Span6 is everything you need in <span class="highlight_light">one innovative platform</span>.
@@ -226,51 +302,70 @@
       <h3>Free Demo</h3>
     </div>
 
-
-    <form>
-      <h2><span>Fill out the form below for your <span class="highlight_light">*FREE* consultation, demo and trial.</span></span></h2>
-
+    <div id="success-message" style="display:none">
       <p>
-        <label>First Name *</label>
-        <input type="text" name="first_name" class="text_field required" />
+        <span class="highlight_dark" style="font-size:1.3em">Thank you for your interest in Span6.</span> <br/><br/>
+        <span class="highlight_green" style="font-size:1.3em">We will contact you to initiate the consultation and demo shortly.</span>
       </p>
-
+      <br/>
       <p>
-        <label>Last Name *</label>
-        <input type="text" name="last_name" class="text_field required" />
+        <a href="#" id="edit-request">Edit my request</a>
       </p>
+    </div>
 
-      <p>
-        <label>E-mail Address *</label>
-        <input type="text" name="email" class="text_field required email" />
-      </p>
+    <div id="contact-form">
+      <form action="#" method="POST">
+        <h2><span>Fill out the form below for your <span class="highlight_light">*FREE* consultation, demo and trial.</span></span></h2>
+
+        <div class="validation" id="message-box" style="display:none">
+          Please correct the errors below ...
+          <ul>
+          </ul>
+        </div>
+        <div class="clear"></div>
+
+        <p>
+          <label>First Name *</label>
+          <input type="text" name="first_name" id="first_name" class="text_field required" />
+        </p>
+
+        <p>
+          <label>Last Name *</label>
+          <input type="text" name="last_name" id="last_name"  class="text_field required" />
+        </p>
+
+        <p>
+          <label>E-mail Address *</label>
+          <input type="text" name="email" id="email"  class="text_field required email" />
+        </p>
 
 
-      <p>
-        <label>Phone Number</label>
-        <input type="text" name="phone_number" class="text_field" />
-      </p>
+        <p>
+          <label>Phone Number *</label>
+          <input type="text" name="address[phone1]" id="phone"  class="text_field required phone" />
+        </p>
 
 
-      <p>
-        <label>Company</label>
-        <input type="text" name="custom[phone_number]" class="text_field" />
-      </p>
+        <p>
+          <label>Company</label>
+          <input type="text" name="custom[company]" id="company"  class="text_field" />
+        </p>
 
-      <p>
-        <label>Notes</label>
-        <textarea name="custom[notes]" class="text_field" style="width:248px;height:80px;"></textarea>
-      </p>
+        <p>
+          <label>Notes</label>
+          <textarea name="custom[notes]" id="notes"  class="text_field" style="width:248px;height:80px;"></textarea>
+        </p>
 
-      <div class="clear margin"></div>
+        <div class="clear margin"></div>
 
-      <div class="send_form">
-        <a href="javascript:;" class="button submit"><span>Complete Signup</span></a>
-        <span class="trial">We will ONLY use this information to contact you <span class="highlight_light">personally</span> to setup a demo.</span>
-      </div>
+        <div class="send_form">
+          <a href="javascript:;" class="button submit"><span>Complete Signup</span></a>
+          <span class="trial">We will ONLY use this information to contact you <span class="highlight_light">personally</span> to setup a demo.</span>
+        </div>
 
-      <div class="clear margin"></div>
-    </form>
+        <div class="clear margin"></div>
+      </form>
+    </div>
     <div class="clear"></div>
 
   </div>

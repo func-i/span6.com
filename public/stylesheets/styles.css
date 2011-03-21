@@ -528,6 +528,7 @@ h6 {
 b { color: #444; }
 span.highlight_dark { color: #fff; background: #555; padding: 2px 6px; }
 span.highlight_light { background: #ffffc8; padding: 2px 6px; }
+span.highlight_green { background: #66ffc8; padding: 2px 6px; }
 div#page p {
   margin-bottom: 15px;
   line-height: 22px;
@@ -572,6 +573,7 @@ form p {
 }
 form p.last { margin-right: 0; }
 form p.message { margin-top: 20px; float: none; }
+input.error { border: 1px solid red; }
 p.validation, div.validation { font-weight: bold; color: red; margin-bottom: 20px; }
 div.validation ul { margin-left: 20px; }
 p.confirmation { font-weight: bold; color: #30AA60; }
