@@ -64,6 +64,79 @@
     </center>
   </div>
 
+  <div id="contact">
+    <div class="section_title">
+      <h3>Free Demo</h3>
+    </div>
+
+    <div id="success-message" style="display:none">
+      <p>
+        <span class="highlight_dark" style="font-size:1.3em">Thank you for your interest in Span6.</span> <br/><br/>
+        <span class="highlight_green" style="font-size:1.3em">We will contact you to initiate the consultation and demo shortly.</span>
+      </p>
+      <br/>
+      <p>
+        <a href="#" id="edit-request">Edit my request</a>
+      </p>
+    </div>
+
+    <div id="contact-form">
+      <form action="#" method="POST">
+        <h2><span>Fill out the form below for your <span class="highlight_light">*FREE* consultation, demo and trial.</span></span></h2>
+
+        <div class="validation" id="message-box" style="display:none">
+          Please correct the errors below ...
+          <ul>
+          </ul>
+        </div>
+        <div class="clear"></div>
+
+        <p>
+          <label>First Name *</label>
+          <input type="text" name="first_name" id="first_name" class="text_field required" />
+        </p>
+
+        <p>
+          <label>Last Name *</label>
+          <input type="text" name="last_name" id="last_name"  class="text_field required" />
+        </p>
+
+        <p>
+          <label>E-mail Address *</label>
+          <input type="text" name="email" id="email"  class="text_field required email" />
+        </p>
+
+
+        <p>
+          <label>Phone Number *</label>
+          <input type="text" name="address[phone1]" id="phone"  class="text_field required phone" />
+        </p>
+
+
+        <p>
+          <label>Company</label>
+          <input type="text" name="custom[company]" id="company"  class="text_field" />
+        </p>
+
+        <p>
+          <label>Notes</label>
+          <textarea name="custom[notes]" id="notes"  class="text_field" style="width:248px;height:80px;"></textarea>
+        </p>
+
+        <div class="clear margin"></div>
+
+        <div class="send_form">
+          <a href="javascript:;" class="button submit"><span>Complete Signup</span></a>
+          <span class="trial">We will ONLY use this information to contact you <span class="highlight_light">personally</span> to setup a demo.</span>
+        </div>
+
+        <div class="clear margin"></div>
+      </form>
+    </div>
+    <div class="clear"></div>
+
+  </div>
+
   <div id="features">
 
     <div class="section_title">
@@ -191,78 +264,21 @@
     <div class="clear"></div>
   </div>
 
-  <div id="contact">
-    <div class="section_title">
-      <h3>Free Demo</h3>
-    </div>
-
-    <div id="success-message" style="display:none">
-      <p>
-        <span class="highlight_dark" style="font-size:1.3em">Thank you for your interest in Span6.</span> <br/><br/>
-        <span class="highlight_green" style="font-size:1.3em">We will contact you to initiate the consultation and demo shortly.</span>
-      </p>
-      <br/>
-      <p>
-        <a href="#" id="edit-request">Edit my request</a>
-      </p>
-    </div>
-
-    <div id="contact-form">
-      <form action="#" method="POST">
-        <h2><span>Fill out the form below for your <span class="highlight_light">*FREE* consultation, demo and trial.</span></span></h2>
-
-        <div class="validation" id="message-box" style="display:none">
-          Please correct the errors below ...
-          <ul>
-          </ul>
-        </div>
-        <div class="clear"></div>
-
-        <p>
-          <label>First Name *</label>
-          <input type="text" name="first_name" id="first_name" class="text_field required" />
-        </p>
-
-        <p>
-          <label>Last Name *</label>
-          <input type="text" name="last_name" id="last_name"  class="text_field required" />
-        </p>
-
-        <p>
-          <label>E-mail Address *</label>
-          <input type="text" name="email" id="email"  class="text_field required email" />
-        </p>
-
-
-        <p>
-          <label>Phone Number *</label>
-          <input type="text" name="address[phone1]" id="phone"  class="text_field required phone" />
-        </p>
-
-
-        <p>
-          <label>Company</label>
-          <input type="text" name="custom[company]" id="company"  class="text_field" />
-        </p>
-
-        <p>
-          <label>Notes</label>
-          <textarea name="custom[notes]" id="notes"  class="text_field" style="width:248px;height:80px;"></textarea>
-        </p>
-
-        <div class="clear margin"></div>
-
-        <div class="send_form">
-          <a href="javascript:;" class="button submit"><span>Complete Signup</span></a>
-          <span class="trial">We will ONLY use this information to contact you <span class="highlight_light">personally</span> to setup a demo.</span>
-        </div>
-
-        <div class="clear margin"></div>
-      </form>
-    </div>
-    <div class="clear"></div>
-
+  <div style="margin:16px">
+    <center>
+      <a href="#contact" data-anchor="#contact" class="button icon scrollto">
+        <img src="/images/go_icon.png" alt="Go" /><span>Request a Free Demo</span></a>
+      <a href="#videocontainer" data-anchor="#videocontainer" class="button icon scrollto" onclick="player.play(); return true;">
+        <img src="/images/go_icon.png" alt="Go" /><span>Watch Introduction Video</span></a>
+    </center>
   </div>
+  <div style="margin:10px">
+    <center>
+      <span class="trial">Or call us directly at <strong><%= phone_number %></strong>.</span>
+    </center>
+  </div>
+
+
   <div class="clear"></div>
 
 </div>

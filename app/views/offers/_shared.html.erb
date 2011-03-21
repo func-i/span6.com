@@ -1,0 +1,103 @@
+<%= javascript_include_tag 'jquery.scrollto-min', 'jquery.validate' %>
+<script type="text/javascript" charset="utf-8">
+  var player = null;
+  $(document).ready(function() {
+    // Configure fancybox plugin
+    var os = detectMobile(navigator.userAgent);
+    if (os.android) {
+      var html = '<video poster="/images/s6-video-poster-v3.png" src="/s6-home-video-cut4.hero.mp4" width="960" height="568" controls="controls" preload="true">';
+      $('#videocontainer').html(html);
+    } else if (os.blackberry) {
+      var html = '<video poster="/images/s6-video-poster-v3.png" src="/s6-home-video-cut4.mobile.3gp" width="960" height="568" controls="controls" preload="true">';
+      $('#videocontainer').html(html);
+    } else if (os.iphone) {
+      var html = '<video poster="/images/s6-video-poster-v3.png" src="/s6-home-video-cut4.iphone.m4v" width="960" height="568" controls="controls" preload="true">';
+      $('#videocontainer').html(html);
+    } else {
+      if ($('video').size() > 0) {
+        player = new MediaElementPlayer('video',{
+          defaultVideoWidth: 960,
+          defaultVideoHeight: 568,
+          pluginPath: '/mediaelement/'
+        });
+      }
+    }
+
+    $('a.scrollto').click( function(e) {
+      var anchor = $(this).data('anchor');
+      e.stopPropagation();
+      $.scrollTo( anchor , 600);//, {easing:'elasout'} );
+      return false;
+    });
+
+  });
+</script>
+
+
+<script>
+  function trackLead() {
+    osm_tracker.track({
+      lead: {
+        'first_name': $('#first_name').val(),
+        'last_name': $('#last_name').val(),
+        'email': $('#email').val(),
+
+        'address[phone1]': $('#phone').val(),
+
+        'custom[company]': $('#company').val(),
+        'custom[notes]': $('#notes').val()
+      }
+    });
+  }
+
+  function formSubmit() {
+    trackLead();
+    $('#contact-form').hide();
+    $('#success-message').show();
+    $('#edit-request').show();
+    return false;
+  }
+
+  $(function() {
+    $('.text_field').blur(function(e) {
+      trackLead();
+    });
+    $('#edit-request').click(function() {
+      $('#contact-form').show();
+      $('#edit-request').hide();
+      return false;
+    });
+    $('form').validate({
+      errorContainer: '#message-box',
+      errorLabelContainer: '#message-box ul',
+      wrapper: 'li',
+      errorElement: 'em',
+      submitHandler: function(form) {
+        formSubmit();
+      },
+      rules: {
+        // simple rule, converted to {required:true}
+        name: "required",
+        // compound rule
+        email: {
+          required: true,
+          email: true
+        },
+        'address[phone1]': {
+          required: true
+        }
+      },
+      messages: {
+        first_name: "Please specify your first name, to avoid an awkward initial contact",
+        last_name:  "Please specify your last name, to avoid an awkward initial contact",
+        email: {
+          required: "We need your email address to contact you (and nothing more, promise.)",
+          email: "Your email address must be in the format of name@domain.com"
+        },
+        'address[phone1]': {
+          required: "We need your phone number to contact you (and nothing more, promise.)"
+        }
+      }
+    });
+  });
+</script>
