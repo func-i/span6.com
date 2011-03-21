@@ -2,8 +2,7 @@ class OffersController < ApplicationController
 
   layout 'offers'
 
-  def trial1
-    
-  end
+  caches_page :trial1, :trial2, :trial3, :trial4
+
 
 end
