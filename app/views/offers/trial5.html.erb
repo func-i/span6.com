@@ -1,0 +1,143 @@
+<% content_for :js do %>
+  <%= render 'shared' %>
+  <script type="text/javascript">
+    var osmJsHost = (("https:" == document.location.protocol) ? "https://self." : "http://self.") + 'osamm.com';
+    document.write(unescape("%3Cscript src='" + osmJsHost + "/assets/tracker.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    osm_tracker.s_id = 2;
+    osm_tracker.track();
+  </script>
+<% end %>
+
+<div class="header header_home page" style="height: 400px">
+  <div class="price_tag" style="background: url('/images/price_tag.png') no-repeat top;top:-85px;right:-35px"></div>
+  <h1 style="font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif; font-size: 35px; color: #777;">
+    Stop Trying to Integrate Six Different Platforms.<br/>
+    <strong>Span6</strong> is Everything You Need in <span class="highlight_light">One Innovative Platform</span>.
+  </h1>
+  <br/>
+  <!--
+  <div style="margin:16px">
+    <center>
+      <a href="#contact" data-anchor="#contact" class="button icon scrollto">
+        <img src="/images/go_icon.png" alt="Go" /><span>Request a Free Demo</span></a>
+      <a href="#videocontainer" data-anchor="#videocontainer" class="button icon scrollto" onclick="player.play(); return true;">
+        <img src="/images/go_icon.png" alt="Go" /><span>Watch Introduction Video</span></a>
+    </center>
+  </div>
+  <div style="margin:10px">
+    <center>
+      <span class="trial">Or call us directly at <strong><%= phone_number %></strong>.</span>
+    </center>
+  </div>
+-->
+
+<center>
+  <div id="videocontainer">
+    <video width="480" height="284" controls="controls" preload="true" poster="/images/s6-video-poster-v3.png" src="/s6-home-video-cut4.mp4">
+      <source type="video/mp4" src="/s6-home-video-cut4.mp4" id="main-video-source" />
+      <source type="video/webm" src="/s6-home-video-cut4.webm" />
+      <source type="video/ogg" src="/s6-home-video-cut4.ogv" />
+      <source type='video/3gpp; codecs="mp4v.20.8, samr"' src='/s6-home-video-cut4.mobile.3gp' />
+    </video>
+  </div>
+</center>
+  <!-- End App Screenshot -->
+
+  <div class="clear"></div>
+
+</div>
+
+<div id="home" class="padding">
+
+<!--
+  <div style="margin:16px">
+    <center>
+      <a href="#contact" data-anchor="#contact" class="button icon scrollto">
+        <img src="/images/go_icon.png" alt="Go" /><span>Request a Free Demo</span></a>
+      <a href="#videocontainer" data-anchor="#videocontainer" class="button icon scrollto" onclick="player.play(); return true;">
+        <img src="/images/go_icon.png" alt="Go" /><span>Watch Introduction Video</span></a>
+    </center>
+  </div>
+  <div>
+    <center>
+      <span class="trial">Or call us directly at <strong><%= phone_number %></strong>.</span>
+    </center>
+  </div>
+-->
+  <div id="contact">
+    <div class="section_title">
+      <h3>Free Demo</h3>
+    </div>
+
+    <div id="success-message" style="display:none">
+      <p>
+        <span class="highlight_dark" style="font-size:1.3em">Thank you for your interest in Span6.</span> <br/><br/>
+        <span class="highlight_green" style="font-size:1.3em">We will contact you to initiate the consultation and demo shortly.</span>
+      </p>
+      <br/>
+      <p>
+        <a href="#" id="edit-request">Edit my request</a>
+      </p>
+    </div>
+
+    <div id="contact-form">
+      <form action="#" method="POST">
+        <h2><span>Fill out the form below for your <span class="highlight_light">*FREE* consultation, demo and trial.</span></span></h2>
+
+        <div class="validation" id="message-box" style="display:none">
+          Please correct the errors below ...
+          <ul>
+          </ul>
+        </div>
+        <div class="clear"></div>
+
+        <p>
+          <label>First Name *</label>
+          <input type="text" name="first_name" id="first_name" class="text_field required" />
+        </p>
+
+        <p>
+          <label>Last Name *</label>
+          <input type="text" name="last_name" id="last_name"  class="text_field required" />
+        </p>
+
+        <p>
+          <label>E-mail Address *</label>
+          <input type="text" name="email" id="email"  class="text_field required email" />
+        </p>
+
+
+        <p>
+          <label>Phone Number *</label>
+          <input type="text" name="address[phone1]" id="phone"  class="text_field required phone" />
+        </p>
+
+
+        <p>
+          <label>Company</label>
+          <input type="text" name="custom[company]" id="company"  class="text_field" />
+        </p>
+
+        <p>
+          <label>Notes</label>
+          <textarea name="custom[notes]" id="notes"  class="text_field" style="width:248px;height:80px;"></textarea>
+        </p>
+
+        <div class="clear margin"></div>
+
+        <div class="send_form">
+          <a href="javascript:;" class="button submit"><span>Complete Signup</span></a>
+          <span class="trial">We will ONLY use this information to contact you <span class="highlight_light">personally</span> to setup a demo.</span>
+        </div>
+
+        <div class="clear margin"></div>
+      </form>
+    </div>
+    <div class="clear"></div>
+
+  </div>
+  <div class="clear"></div>
+
+</div>

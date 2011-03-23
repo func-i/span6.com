@@ -15,6 +15,7 @@ AwesomeHome::Application.routes.draw do
   get 'offers/trial2' => 'offers#trial2'
   get 'offers/trial3' => 'offers#trial3'
   get 'offers/trial4' => 'offers#trial4'
+  get 'offers/trial5' => 'offers#trial5'
 
   resources :signups, :only => [:new, :create]
   resources :inquiries, :only => [:new, :create]
